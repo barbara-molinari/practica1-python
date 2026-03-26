@@ -1,21 +1,21 @@
 import random
-words = [
-"python",
-"programa",
-"variable",
-"funcion",
-"bucle",
-"cadena",
-"entero",
-"lista",
-]
-word = random.choice(words)
+categorias = {
+    "programacion": ["variable", "bucle", "funcion", "algoritmo", "codigo"],
+    "python": ["listas", "diccionario", "tupla", "indentacion", "import"]
+}
+
+print("¡Bienvenido al Ahorcado!")
+print()
+print("Categorías disponibles: programacion, python")
+seleccion = input("Elegí una categoría: ").lower()
+
+# Buscamos la palabra dentro de la lista 
+word = random.choice(categorias[seleccion])
 guessed = []
 attempts = 6
 letras_incorrectas = 0
 
-print("¡Bienvenido al Ahorcado!")
-print()
+
 
 while attempts > 0:
     # Mostrar progreso: letras adivinadas y guiones para las que faltan
